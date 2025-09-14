@@ -1,0 +1,32 @@
+<div class="calculator">
+  <div>
+    <select (change)="changeModificator({ event: $event, target: first })">
+      @for (modifier of modifierValues; track modifier) {
+        <option [selected]="modifier === first().modificator" [value]="modifier">{{ modifier }}</option>
+      }
+    </select>
+
+    <input type="number" [value]="first().value" (change)="changeValue({ event: $event, target: first })">
+
+    <select (change)="changeOperation({ event: $event, target: operation })">
+      @for (op of operationValues; track op) {
+        <option [selected]="op === operation()" [value]="op">{{ op }}</option>
+      }
+    </select>
+
+    <select (change)="changeModificator({ event: $event, target: second })">
+      @for (modifier of modifierValues; track modifier) {
+        <option [selected]="modifier === second().modificator" [value]="modifier">{{ modifier }}</option>
+      }
+    </select>
+
+    <input type="number" [value]="second().value" (change)="changeValue({ event: $event, target: second })">
+  </div>
+
+  <div>
+    <button (click)="calc()">Рассчитать</button>
+  </div>
+  <div>
+    Результат: {{ result() }}
+  </div>
+</div>
