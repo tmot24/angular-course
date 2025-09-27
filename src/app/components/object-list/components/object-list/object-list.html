@@ -1,0 +1,6 @@
+<div>
+  @for (item of myObjects(); track item.id) {
+    <!-- ссылка, использует маршруты из твоего конфигурационного файла -->
+    <a [routerLink]="[item.id]">{{ item.title }}</a>
+  }
+</div>
