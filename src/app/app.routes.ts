@@ -6,6 +6,7 @@ import { Directive } from './components/directive/directive';
 import { lifeCycleRoutes } from './life-cycle/life-cycle.routes';
 import { requestRoutes } from './request/request.routes';
 import { pipesRoutes } from './pipes/pipes.routes';
+import { formsRoutes } from './forms/forms.routes';
 
 export const routes: Routes = [
   {
@@ -43,6 +44,11 @@ export const routes: Routes = [
     title: 'Пайпы',
     path: 'pipes',
     children: pipesRoutes,
+  },
+  {
+    title: 'Формы',
+    path: 'forms',
+    children: formsRoutes,
   },
   {
     title: '404',

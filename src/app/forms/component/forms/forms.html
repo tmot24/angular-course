@@ -1,0 +1,31 @@
+<form [formGroup]="form" (ngSubmit)="submitHandler()">
+  <label for="login">Логин</label>
+  <input type="text" formControlName="login" id="login">
+  @if (!form.controls.login.valid && form.controls.login.touched) {
+    <small>Обязательно</small>
+  }
+  <br />
+
+  <label for="email">Почта</label>
+  <input type="text" formControlName="email" id="email">
+  @if (!form.controls.email.valid && form.controls.email.touched) {
+    <small>Обязательно</small>
+  }
+  <br />
+
+  <label for="password">Пароль</label>
+  <input type="text" formControlName="password" id="password">
+  @if (!form.controls.password.valid && form.controls.password.touched) {
+    <small>Обязательно</small>
+  }
+  <br />
+
+  <button type="submit" [disabled]="!form.valid">Отправить</button>
+
+  @if (form.invalid) {
+    <div>В форме ошибка</div>
+  } @else {
+    <div>В форме ошибок нет</div>
+  }
+
+</form>
