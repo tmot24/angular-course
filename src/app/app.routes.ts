@@ -3,8 +3,9 @@ import { Calculator } from './components/calculator/calculator';
 import { EmptyRoute } from './components/empty-route/empty-route';
 import { objectRoutes } from './components/object-list/components/object-list/object-list.routes';
 import { Directive } from './components/directive/directive';
-import { lifeCycleRoutes } from './lifecycle/life-cycle.routes';
+import { lifeCycleRoutes } from './life-cycle/life-cycle.routes';
 import { requestRoutes } from './request/request.routes';
+import { pipesRoutes } from './pipes/pipes.routes';
 
 export const routes: Routes = [
   {
@@ -37,6 +38,11 @@ export const routes: Routes = [
     title: 'Запросы',
     path: 'request',
     children: requestRoutes,
+  },
+  {
+    title: 'Пайпы',
+    path: 'pipes',
+    children: pipesRoutes,
   },
   {
     title: '404',
