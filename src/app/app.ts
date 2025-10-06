@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { Navigation } from './components/navigation/navigation';
+import { Navigation } from './navigation/navigation';
 import { RouterOutlet } from '@angular/router';
 
 @Component({

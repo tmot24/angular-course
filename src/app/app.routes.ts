@@ -3,6 +3,7 @@ import { Calculator } from './components/calculator/calculator';
 import { EmptyRoute } from './components/empty-route/empty-route';
 import { objectRoutes } from './components/object-list/components/object-list/object-list.routes';
 import { Directive } from './components/directive/directive';
+import { lifeCycleRoutes } from './lifecycle/life-cycle.routes';
 
 export const routes: Routes = [
   {
@@ -16,13 +17,20 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    title: 'Директивы',
     path: 'directive',
     component: Directive
   },
   {
+    title: 'Лист объектов',
     path: 'object-list',
     // loadChildren: () => import('./components/object-list/components/object-list/object-list.routes').then(m => m.objectRoutes),
     children: objectRoutes,
+  },
+  {
+    title: 'Жизненные циклы',
+    path: 'life-cycle',
+    children: lifeCycleRoutes,
   },
   {
     title: '404',
