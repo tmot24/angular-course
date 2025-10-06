@@ -23,6 +23,23 @@
     <input type="number" [value]="second().value" (change)="changeValue({ event: $event, target: second })">
   </div>
 
+  @for (empty of emptyArray(); track empty) {
+    <div>{{ empty }</div>
+  } @empty {
+    <div>Здесь нет данных</div>
+  }
+
+  @for (color of colorArray(); track color) {
+    <div (click)="currentColor.set(color)">{{ color }}</div>
+  }
+
+  @if (currentColor()) {
+    <div [ngClass]="classObject()">{{ currentColor() }}
+    </div>
+  } @else {
+    <div>Выберите цвет</div>
+  }
+
   <div>
     <button (click)="calc()">Рассчитать</button>
   </div>

@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Calculator } from './components/calculator/calculator';
 import { EmptyRoute } from './components/empty-route/empty-route';
 import { objectRoutes } from './components/object-list/components/object-list/object-list.routes';
+import { Directive } from './components/directive/directive';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,10 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'calculator',
     pathMatch: 'full'
+  },
+  {
+    path: 'directive',
+    component: Directive
   },
   {
     path: 'object-list',

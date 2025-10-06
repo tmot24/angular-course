@@ -1,9 +1,12 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import { Component, computed, signal, WritableSignal } from '@angular/core';
 import { Modifier, Operation, Var } from './calculator-types';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-calculator',
-  imports: [],
+  imports: [
+    NgClass
+  ],
   templateUrl: './calculator.html',
   styleUrl: './calculator.css'
 })
@@ -21,6 +24,16 @@ export class Calculator {
   });
   protected operation = signal<Operation>(Operation.plus);
   protected result = signal(0);
+  protected emptyArray = signal<string[]>([]);
+  protected currentColor = signal<string | undefined>(undefined);
+  protected colorArray = signal<string[]>([ 'red', 'blue', 'green', 'yellow' ]);
+
+  protected classObject = computed(() => ({
+    'red': this.currentColor() === 'red',
+    'blue': this.currentColor() === 'blue',
+    'green': this.currentColor() === 'green',
+    'yellow': this.currentColor() === 'yellow'
+  }));
 
   protected changeModificator({ event, target }: { event: Event; target: WritableSignal<Var> }) {
     const select = event.target as HTMLSelectElement;
