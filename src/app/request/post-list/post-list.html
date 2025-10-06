@@ -1,0 +1,9 @@
+<p>post-list works!</p>
+
+<div>
+  @if (posts$ | async; as posts) {
+    @for (post of posts; track post.id) {
+      <a [routerLink]="[post.id]">{{ post.title }}</a>
+    }
+  }
+</div>
