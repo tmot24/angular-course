@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { checkRegExp, conformPassword } from './helpers';
 
 @Component({
   selector: 'app-forms',
@@ -12,8 +13,11 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class Forms {
   protected form = new FormGroup({
     login: new FormControl('', [ Validators.required ]),
-    email: new FormControl('', [ Validators.required, Validators.email ]),
-    password: new FormControl('', [ Validators.required ])
+    email: new FormControl('', [ checkRegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/) ]),
+    password: new FormControl('', [ Validators.required ]),
+    repeatPassword: new FormControl('', [ Validators.required ])
+  }, {
+    validators: [conformPassword]
   });
 
   protected submitHandler() {

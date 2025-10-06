@@ -20,6 +20,13 @@
   }
   <br />
 
+  <label for="repeatPassword">Повтор пароля</label>
+  <input type="text" formControlName="repeatPassword" id="repeatPassword">
+  @if (form.errors?.['PasswordDoNotMatch']) {
+    <small>PasswordDoNotMatch: пароли не совпадают</small>
+  }
+  <br />
+
   <button type="submit" [disabled]="!form.valid">Отправить</button>
 
   @if (form.invalid) {
@@ -27,5 +34,4 @@
   } @else {
     <div>В форме ошибок нет</div>
   }
-
 </form>
