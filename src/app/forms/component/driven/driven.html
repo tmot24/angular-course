@@ -1,0 +1,10 @@
+<form (ngSubmit)="submitHandler()">
+  <label for="login">Логин</label>
+  <input type="text" [(ngModel)]="templateDrivenForm.login" name="login" id="login">
+  <label for="email">Почта</label>
+  <input type="text" [(ngModel)]="templateDrivenForm.email" name="email" id="email">
+  <label for="password">Пароль</label>
+  <input type="text" [(ngModel)]="templateDrivenForm.password" name="password" id="password">
+
+  <button type="submit">Отправить</button>
+</form>

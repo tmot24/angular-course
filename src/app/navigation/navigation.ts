@@ -10,6 +10,7 @@ const navigationRoutes = [
   { path: '/pipes', lable: 'Пайпы' },
   { path: '/forms', lable: 'Формы' },
   { path: '/forms/builder-form', lable: 'builder-form' },
+  { path: '/forms/driven', lable: 'driven' },
   { path: '/something', lable: 'Что-то ещё' }
 ];
 
