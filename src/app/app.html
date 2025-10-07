@@ -1,6 +1,8 @@
 <h1 [title]="tooltip()">{{ title() }}</h1>
 <button (click)="showMessage()">Кнопка</button>
 
-<app-navigation />
+<div style="display: flex; gap: 8px">
+  <app-navigation />
+  <router-outlet />
+</div>
 
-<router-outlet />

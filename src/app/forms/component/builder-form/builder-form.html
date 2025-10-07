@@ -1,0 +1,46 @@
+<form [formGroup]="fbForm" (ngSubmit)="submitHandler()">
+  <label for="name">Имя</label>
+  <input type="text" formControlName="name" id="name">
+  @if (!fbForm.controls.name.valid && fbForm.controls.name.touched) {
+    <small>Обязательно</small>
+  }
+
+  <div formGroupName="place">
+    <label for="city">Город</label>
+    <input type="text" formControlName="city" id="city">
+    @if (!fbForm.controls.place.controls.city.valid && fbForm.controls.place.controls.city.touched) {
+      <small>Обязательно</small>
+    }
+    <br/>
+
+    <label for="time">Время</label>
+    <input type="text" formControlName="time" id="time">
+    @if (!fbForm.controls.place.controls.time.valid && fbForm.controls.place.controls.time.touched) {
+      <small>Обязательно</small>
+    }
+    <br/>
+  </div>
+
+  <div formArrayName="skills">
+    @for (skillGroup of fbForm.controls.skills.controls; track skillGroup; let i = $index) {
+      <div [formGroupName]="i">
+        <label [for]="'skill_' + i">Навык</label>
+        <input type="text" formControlName="skill" [id]="'skill_' + i">
+        <label [for]="'experience_' + i">Опыт</label>
+        <input type="text" formControlName="experience" [id]="'experience_' + i">
+        <button type="button" (click)="removeSkill(i)">Удалить</button>
+      </div>
+    }
+  </div>
+
+  <button type="button" (click)="addSkill()">Добавить</button>
+
+
+  <button type="submit">Отправить</button>
+
+  @if (fbForm.invalid) {
+    <div>В форме ошибка</div>
+  } @else {
+    <div>В форме ошибок нет</div>
+  }
+</form>

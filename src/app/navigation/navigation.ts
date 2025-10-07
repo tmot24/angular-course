@@ -9,6 +9,7 @@ const navigationRoutes = [
   { path: '/request', lable: 'Запросы' },
   { path: '/pipes', lable: 'Пайпы' },
   { path: '/forms', lable: 'Формы' },
+  { path: '/forms/builder-form', lable: 'builder-form' },
   { path: '/something', lable: 'Что-то ещё' }
 ];
 

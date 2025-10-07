@@ -14,9 +14,7 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './post-item.css'
 })
 export class PostItem {
-  constructor(private postService: PostService) {
-  }
-
+  private postService = inject(PostService);
   private route = inject(ActivatedRoute);
 
   // превращаем paramMap -> число id в сигнал

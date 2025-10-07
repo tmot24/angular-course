@@ -1,4 +1,4 @@
-import { Component, computed, OnInit } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { Post, PostService } from '../service/post.service';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './post-list.css'
 })
 export class PostList implements OnInit {
-  constructor(private postService: PostService) {}
+  private postService = inject(PostService);
 
   protected posts$?: Observable<Post[]>;
 

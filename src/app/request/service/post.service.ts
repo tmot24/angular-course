@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 export interface Post {
@@ -12,8 +12,7 @@ export interface Post {
   providedIn: 'root',
 })
 export class PostService {
-
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient)
 
   public getPosts() {
     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts')
