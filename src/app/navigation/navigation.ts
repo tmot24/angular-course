@@ -2,16 +2,17 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 const navigationRoutes = [
-  { path: '/calculator', lable: 'Калькулятор' },
-  { path: '/object-list', lable: 'Лист объектов' },
-  { path: '/directive', lable: 'Директива' },
-  { path: '/life-cycle', lable: 'Жизненные циклы' },
-  { path: '/request', lable: 'Запросы' },
-  { path: '/pipes', lable: 'Пайпы' },
-  { path: '/forms', lable: 'Формы' },
-  { path: '/forms/builder-form', lable: 'builder-form' },
-  { path: '/forms/driven', lable: 'driven' },
-  { path: '/something', lable: 'Что-то ещё' }
+  { path: '/calculator', label: 'Калькулятор' },
+  { path: '/object-list', label: 'Лист объектов' },
+  { path: '/directive', label: 'Директива' },
+  { path: '/life-cycle', label: 'Жизненные циклы' },
+  { path: '/request', label: 'Запросы' },
+  { path: '/pipes', label: 'Пайпы' },
+  { path: '/forms', label: 'Формы' },
+  { path: '/forms/builder-form', label: 'builder-form' },
+  { path: '/forms/driven', label: 'driven' },
+  { path: '/forms/custom-form', label: 'custom-form' },
+  { path: '/something', label: 'Что-то ещё' }
 ];
 
 @Component({

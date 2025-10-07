@@ -1,13 +1,13 @@
-import { Component, computed, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Post, PostService } from '../service/post.service';
 import { Observable } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-post-list',
   imports: [
-    AsyncPipe, RouterLink
+    RouterLink
   ],
   templateUrl: './post-list.html',
 })
@@ -16,7 +16,7 @@ export class PostList implements OnInit {
 
   protected posts$?: Observable<Post[]>;
 
-  protected second = computed(() => this.postService.getPosts())
+  protected postsSignal = toSignal(this.postService.getPosts(), { initialValue: [] });
 
   ngOnInit() {
     this.posts$ = this.postService.getPosts();

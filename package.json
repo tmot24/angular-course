@@ -12,6 +12,8 @@
     "printWidth": 100,
     "singleQuote": true,
     "bracketSpacing": true,
+    "trailingComma": "all",
+    "semi": true,
     "overrides": [
       {
         "files": "*.html",

@@ -1,0 +1,10 @@
+<div>
+  @if (options()?.text) {
+    <div>{{ options()?.text }}</div>
+  }
+  <div>
+    @for (el of ratesArray(); track el) {
+      <div (click)="onRate(el)" [style.color]="currentRate() === el ? 'red' : 'black'">{{ el }}</div>
+    }
+  </div>
+</div>

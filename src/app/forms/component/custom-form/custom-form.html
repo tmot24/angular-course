@@ -1,0 +1,8 @@
+<p>custom-form works!</p>
+
+<div [formGroup]="customForm">
+
+  <pre>{{ customForm.value | json }}</pre>
+
+  <app-custom-control formControlName="rate" [inputOptions]="ratesOptions"/>
+</div>
