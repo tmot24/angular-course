@@ -11,7 +11,6 @@ import { CustomPipe } from '../custom-pipe/custom-pipe';
     CustomPipe
   ],
   templateUrl: './pipes.html',
-  styleUrl: './pipes.css'
 })
 export class Pipes {
   protected foo = 'foo';

@@ -8,7 +8,6 @@ import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Va
     ReactiveFormsModule
   ],
   templateUrl: './builder-form.html',
-  styleUrl: './builder-form.css'
 })
 export class BuilderForm {
   private fb = inject(FormBuilder);

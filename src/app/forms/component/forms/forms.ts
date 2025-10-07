@@ -8,7 +8,6 @@ import { checkRegExp, conformPassword } from './helpers';
     ReactiveFormsModule
   ],
   templateUrl: './forms.html',
-  styleUrl: './forms.css'
 })
 export class Forms {
   protected form = new FormGroup({

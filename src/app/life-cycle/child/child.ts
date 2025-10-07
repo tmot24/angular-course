@@ -17,7 +17,6 @@ import {
   selector: 'app-child',
   imports: [],
   templateUrl: './child.html',
-  styleUrl: './child.css'
 })
 export class Child implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy, OnChanges {
   /*  @Input() title?: string;

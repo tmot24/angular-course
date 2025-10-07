@@ -7,7 +7,6 @@ import { RouterLink } from '@angular/router';
     RouterLink
   ],
   templateUrl: './empty-route.html',
-  styleUrl: './empty-route.css'
 })
 export class EmptyRoute {
 

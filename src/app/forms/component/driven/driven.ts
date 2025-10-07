@@ -13,7 +13,6 @@ interface TemplateForm {
     FormsModule
   ],
   templateUrl: './driven.html',
-  styleUrl: './driven.css'
 })
 export class Driven {
   protected templateDrivenForm: TemplateForm = {

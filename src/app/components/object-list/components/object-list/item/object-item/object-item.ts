@@ -9,7 +9,6 @@ import { map } from 'rxjs';
   selector: 'app-object-item',
   imports: [],
   templateUrl: './object-item.html',
-  styleUrl: './object-item.css'
 })
 export class ObjectItem {
   private route = inject(ActivatedRoute);

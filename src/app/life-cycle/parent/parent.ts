@@ -7,7 +7,6 @@ import { Child } from '../child/child';
     Child
   ],
   templateUrl: './parent.html',
-  styleUrl: './parent.css'
 })
 export class Parent {
     protected parent = signal('parent string');

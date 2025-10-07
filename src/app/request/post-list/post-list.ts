@@ -10,7 +10,6 @@ import { RouterLink } from '@angular/router';
     AsyncPipe, RouterLink
   ],
   templateUrl: './post-list.html',
-  styleUrl: './post-list.css'
 })
 export class PostList implements OnInit {
   private postService = inject(PostService);

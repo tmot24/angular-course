@@ -8,7 +8,6 @@ import { RouterLink } from '@angular/router';
     RouterLink
   ],
   templateUrl: './object-list.html',
-  styleUrl: './object-list.css'
 })
 export class ObjectList {
   protected myObjects = signal(myObjects);

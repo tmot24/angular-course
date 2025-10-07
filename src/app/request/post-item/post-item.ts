@@ -11,7 +11,6 @@ import { AsyncPipe } from '@angular/common';
     AsyncPipe
   ],
   templateUrl: './post-item.html',
-  styleUrl: './post-item.css'
 })
 export class PostItem {
   private postService = inject(PostService);

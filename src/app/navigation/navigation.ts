@@ -21,7 +21,6 @@ const navigationRoutes = [
     RouterLinkActive
   ],
   templateUrl: './navigation.html',
-  styleUrl: './navigation.css'
 })
 export class Navigation {
   protected routes = navigationRoutes;
