@@ -13,6 +13,7 @@ const navigationRoutes = [
   { path: '/forms/driven', label: 'driven' },
   { path: '/forms/custom-form', label: 'custom-form' },
   { path: '/view-element', label: 'view-element' },
+  { path: '/view-element/container', label: 'container' },
   { path: '/something', label: 'Что-то ещё' }
 ];
 
