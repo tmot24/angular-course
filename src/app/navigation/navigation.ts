@@ -12,6 +12,7 @@ const navigationRoutes = [
   { path: '/forms/builder-form', label: 'builder-form' },
   { path: '/forms/driven', label: 'driven' },
   { path: '/forms/custom-form', label: 'custom-form' },
+  { path: '/view-element', label: 'view-element' },
   { path: '/something', label: 'Что-то ещё' }
 ];
 

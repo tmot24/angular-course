@@ -7,6 +7,7 @@ import { lifeCycleRoutes } from './life-cycle/life-cycle.routes';
 import { requestRoutes } from './request/request.routes';
 import { pipesRoutes } from './pipes/pipes.routes';
 import { formsRoutes } from './forms/forms.routes';
+import { viewElementRoutes } from './view-children/view-element.routes';
 
 export const routes: Routes = [
   {
@@ -49,6 +50,11 @@ export const routes: Routes = [
     title: 'Формы',
     path: 'forms',
     children: formsRoutes,
+  },
+  {
+    title: 'view-element',
+    path: 'view-element',
+    children: viewElementRoutes,
   },
   {
     title: '404',
