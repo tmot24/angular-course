@@ -1,46 +1,54 @@
-import { Directive, ElementRef, Input, NgZone, OnDestroy, Renderer2 } from '@angular/core';
-import { distinctUntilChanged, interval, map, Subject, takeUntil } from 'rxjs';
-
-const COLORS = [ 'red', 'green', 'blue', 'purple', 'pink', 'orange', 'yellow' ];
+import { AfterViewInit, computed, Directive, OnDestroy, signal } from '@angular/core';
 
 @Directive({
-  selector: '[appColor]'
+  selector: '[appColor]',
+  host: {
+    '[style.color]': 'color()',
+    '[class]': 'computedClass()',
+    '(click)': 'handleClick($event);',
+  },
 })
-export class Color implements OnDestroy {
-  @Input('appColor') colors: string[] = COLORS;
+export class Color implements AfterViewInit, OnDestroy {
+  private intervalId?: number;
 
-  // private readonly colors = COLORS;
-  private readonly destroy$ = new Subject<void>();
+  protected handleClick(event: MouseEvent) {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = undefined;
+    } else {
+      this.changeColor();
+    }
+  }
 
-  constructor(
-    private el: ElementRef,
-    private renderer: Renderer2,
-    private zone: NgZone
-  ) {
-    // Запускаем поток вне Angular, чтобы не вызывать change detection каждую секунду
-    this.zone.runOutsideAngular(() => {
-      interval(1000).pipe(
-        // каждый тик вычисляем цвет
-        map(() => this.pick()),
-        // не применять стиль, если цвет не сменился (опционально)
-        distinctUntilChanged(),
-        // автоматически завершить поток при destroy
-        takeUntil(this.destroy$)
-      ).subscribe(color => {
-        // безопасное изменение DOM через Renderer2
-        this.renderer.setStyle(this.el.nativeElement, 'color', color);
-      });
-    });
+  protected changeColor() {
+    this.intervalId = setInterval(() => {
+      this.color.set(this.getColor());
+    }, 1000);
+  }
+
+  protected color = signal('orange');
+  protected isTrue = signal(true);
+  protected computedClass = computed(() => {
+    const classes: { [key: string]: boolean } = {
+      'directive': this.isTrue(),
+      'primary': this.isTrue(),
+    };
+
+    return Object.keys(classes).filter((key) => classes[key]);
+  });
+
+  protected getColor = () => {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    return `rgb(${red}, ${green}, ${blue})`;
+  };
+
+  ngAfterViewInit(): void {
+    this.changeColor();
   }
 
   ngOnDestroy(): void {
-    // next() — это «сигнал остановиться».
-    this.destroy$.next();
-    // затем закрываем Subject (хорошая гигиена ресурсов)
-    this.destroy$.complete();
-  }
-
-  private pick(): string {
-    return this.colors[Math.floor(Math.random() * this.colors.length)];
+    clearInterval(this.intervalId);
   }
 }
