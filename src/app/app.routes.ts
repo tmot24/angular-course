@@ -8,22 +8,24 @@ import { requestRoutes } from './request/request.routes';
 import { pipesRoutes } from './pipes/pipes.routes';
 import { formsRoutes } from './forms/forms.routes';
 import { viewElementRoutes } from './view-children/view-element.routes';
+import { userRoutes } from './user/user.routes';
+import { isLoggedGuard } from './guard/is-logged-guard';
 
 export const routes: Routes = [
   {
     title: 'Калькулятор',
     path: 'calculator',
-    component: Calculator
+    component: Calculator,
   },
   {
     path: '',
     redirectTo: 'calculator',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     title: 'Директивы',
     path: 'directive',
-    component: Directive
+    component: Directive,
   },
   {
     title: 'Лист объектов',
@@ -40,6 +42,7 @@ export const routes: Routes = [
     title: 'Запросы',
     path: 'request',
     children: requestRoutes,
+    canActivate: [ isLoggedGuard ],
   },
   {
     title: 'Пайпы',
@@ -57,8 +60,14 @@ export const routes: Routes = [
     children: viewElementRoutes,
   },
   {
+    title: 'Пользователь',
+    path: 'user',
+    children: userRoutes,
+    // canDeactivate: [ isLoggedGuard ],
+  },
+  {
     title: '404',
     path: '**',
-    component: EmptyRoute
-  }
+    component: EmptyRoute,
+  },
 ];

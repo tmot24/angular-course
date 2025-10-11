@@ -8,21 +8,6 @@
     "watch": "node_modules/.bin/ng build --watch --configuration development",
     "test": "node_modules/.bin/ng test"
   },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "trailingComma": "all",
-    "semi": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
-  },
   "private": true,
   "dependencies": {
     "@angular/common": "^20.3.0",

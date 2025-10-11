@@ -14,14 +14,15 @@ const navigationRoutes = [
   { path: '/forms/custom-form', label: 'custom-form' },
   { path: '/view-element', label: 'view-element' },
   { path: '/view-element/container', label: 'container' },
-  { path: '/something', label: 'Что-то ещё' }
+  { path: '/user', label: 'Пользователь' },
+  { path: '/something', label: 'Что-то ещё' },
 ];
 
 @Component({
   selector: 'app-navigation',
   imports: [
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
   ],
   templateUrl: './navigation.html',
 })

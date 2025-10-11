@@ -41,5 +41,13 @@
   "_embeddedLanguageFormatting": "Форматировать встроенные языки (embeddedLanguageFormatting). Опции: \"auto\", \"off\". Default = \"auto\" (форматирует код в строках/шаблонах, если может).",
   "embeddedLanguageFormatting": "auto",
   "_singleAttributePerLine": "Один атрибут на строку в JSX/HTML (singleAttributePerLine). Default = false. WebStorm/VSCode по умолчанию не разбивают атрибуты.",
-  "singleAttributePerLine": false
+  "singleAttributePerLine": false,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "angular"
+      }
+    }
+  ]
 }
