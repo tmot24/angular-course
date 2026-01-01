@@ -10,6 +10,7 @@ import { formsRoutes } from './forms/forms.routes';
 import { viewElementRoutes } from './view-children/view-element.routes';
 import { userRoutes } from './user/user.routes';
 import { isLoggedGuard } from './guard/is-logged-guard';
+import { rerenderRoutes } from './rerender/rerender.routes';
 
 export const routes: Routes = [
   {
@@ -64,6 +65,11 @@ export const routes: Routes = [
     path: 'user',
     children: userRoutes,
     // canDeactivate: [ isLoggedGuard ],
+  },
+  {
+    title: 'Rerender',
+    path: 'rerender',
+    children: rerenderRoutes,
   },
   {
     title: '404',

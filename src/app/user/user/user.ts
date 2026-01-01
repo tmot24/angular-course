@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { UserService } from '../user.service';
+import { UserService } from '../user.service.js';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +7,9 @@ import { UserService } from '../user.service';
   templateUrl: './user.html',
 })
 export class User {
-    protected userService = inject(UserService);
+  protected userService = inject(UserService);
 
-    protected login() {
-      this.userService.login()
-    }
+  protected login() {
+    this.userService.login();
+  }
 }

@@ -1,0 +1,8 @@
+<p>rerender works!</p>
+
+<button (click)="changeText()">Родитель changeText</button>
+<button (click)="changeString()">Изменить текст</button>
+
+@for (item of todoArr(); track item) {
+  <app-render-item [todoItem]="item" (changeItem)="changeItem($event)" />
+}

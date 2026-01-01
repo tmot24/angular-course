@@ -29,7 +29,7 @@ export class Color implements AfterViewInit, OnDestroy {
   protected color = signal('orange');
   protected isTrue = signal(true);
   protected computedClass = computed(() => {
-    const classes: { [key: string]: boolean } = {
+    const classes: Record<string, boolean> = {
       'directive': this.isTrue(),
       'primary': this.isTrue(),
     };
@@ -37,7 +37,7 @@ export class Color implements AfterViewInit, OnDestroy {
     return Object.keys(classes).filter((key) => classes[key]);
   });
 
-  protected getColor = () => {
+  protected getColor () {
     const red = Math.floor(Math.random() * 256);
     const green = Math.floor(Math.random() * 256);
     const blue = Math.floor(Math.random() * 256);
