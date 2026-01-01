@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DatePipe, LowerCasePipe, UpperCasePipe } from '@angular/common';
-import { CustomPipe } from '../custom-pipe/custom-pipe';
+import { CustomPipe } from '../custom-pipe/custom-pipe.js';
 
 @Component({
   selector: 'app-pipes',

@@ -1,16 +1,17 @@
 import { Routes } from '@angular/router';
-import { Calculator } from './components/calculator/calculator';
-import { EmptyRoute } from './components/empty-route/empty-route';
-import { objectRoutes } from './components/object-list/components/object-list/object-list.routes';
-import { Directive } from './components/directive/directive';
-import { lifeCycleRoutes } from './life-cycle/life-cycle.routes';
-import { requestRoutes } from './request/request.routes';
-import { pipesRoutes } from './pipes/pipes.routes';
-import { formsRoutes } from './forms/forms.routes';
-import { viewElementRoutes } from './view-children/view-element.routes';
-import { userRoutes } from './user/user.routes';
-import { isLoggedGuard } from './guard/is-logged-guard';
-import { rerenderRoutes } from './rerender/rerender.routes';
+import { Calculator } from './components/calculator/calculator.js';
+import { EmptyRoute } from './components/empty-route/empty-route.js';
+import { objectRoutes } from './components/object-list/components/object-list/object-list.routes.js';
+import { Directive } from './components/directive/directive.js';
+import { lifeCycleRoutes } from './life-cycle/life-cycle.routes.js';
+import { requestRoutes } from './request/request.routes.js';
+import { pipesRoutes } from './pipes/pipes.routes.js';
+import { formsRoutes } from './forms/forms.routes.js';
+import { viewElementRoutes } from './view-children/view-element.routes.js';
+import { userRoutes } from './user/user.routes.js';
+import { isLoggedGuard } from './guard/is-logged-guard.js';
+import { rerenderRoutes } from './rerender/rerender.routes.js';
+import { animationRoutes } from './animation/animation.routes.js';
 
 export const routes: Routes = [
   {
@@ -70,6 +71,11 @@ export const routes: Routes = [
     title: 'Rerender',
     path: 'rerender',
     children: rerenderRoutes,
+  },
+  {
+    title: 'Анимация',
+    path: 'animation',
+    children: animationRoutes,
   },
   {
     title: '404',

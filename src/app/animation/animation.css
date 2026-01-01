@@ -1,0 +1,8 @@
+.animation-container_appear {
+  animation: appear var(--duration) ease-in var(--delay);
+}
+
+.animation-container_disappear {
+  animation: disappear var(--duration) ease-out var(--delay);
+}
+

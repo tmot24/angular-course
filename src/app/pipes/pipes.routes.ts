@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { Pipes } from './pipes/pipes';
+import { Pipes } from './pipes/pipes.js';
 
 export const pipesRoutes: Routes = [
   {

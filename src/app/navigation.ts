@@ -14,4 +14,5 @@ export const NAVIGATION_ROUTES = [
   { path: '/user', label: 'Пользователь' },
   { path: '/rerender', label: 'Rerender' },
   { path: '/something', label: 'Что-то ещё' },
+  { path: '/animation', label: 'Анимация' },
 ];

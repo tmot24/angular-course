@@ -1,0 +1,14 @@
+<button (click)="toggle()">{{ isShow() ? 'Пропади' : 'Появись' }}</button>
+
+@if (isShow()) {
+  <div
+    animate.enter="animation-container_appear"
+    animate.leave="animation-container_disappear"
+    (animationstart)="animationStart($event)"
+    (animationend)="animationStop($event)"
+    [style.--duration]="duration() + 'ms'"
+    [style.--delay]="delay() + 'ms'"
+    [style.--translate-y]="translateY() + 'px'"
+  >Вау анимация
+  </div>
+}
