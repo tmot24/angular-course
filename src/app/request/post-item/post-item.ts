@@ -2,7 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map, Observable } from 'rxjs';
-import { Post, PostService } from '../service/post.service';
+import { Post, PostService } from '../service/post.service.js';
 import { AsyncPipe } from '@angular/common';
 
 @Component({

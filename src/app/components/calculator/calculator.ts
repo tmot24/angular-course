@@ -1,5 +1,5 @@
 import { Component, computed, signal, WritableSignal } from '@angular/core';
-import { Modifier, Operation, Var } from './calculator-types';
+import { Modifier, Operation, Var } from './calculator-types.js';
 import { NgClass } from '@angular/common';
 
 @Component({

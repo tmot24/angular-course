@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CustomControl, RateOptions } from '../custom-control/custom-control';
+import { CustomControl, RateOptions } from '../custom-control/custom-control.js';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 

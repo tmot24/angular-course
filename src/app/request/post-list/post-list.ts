@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Post, PostService } from '../service/post.service';
+import { Post, PostService } from '../service/post.service.js';
 import { Observable } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';

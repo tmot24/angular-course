@@ -9,7 +9,9 @@
     "watch": "node_modules/.bin/ng build --watch --configuration development",
     "test": "node_modules/.bin/ng test",
     "update": "ng update @angular/core @angular/cli",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "docker:build": "docker build -t angular .",
+    "docker:run": "docker run -p 4201:4200 angular"
   },
   "private": true,
   "dependencies": {

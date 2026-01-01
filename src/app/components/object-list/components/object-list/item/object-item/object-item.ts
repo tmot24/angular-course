@@ -1,7 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
-import { IObject } from '../../object-list.types';
+import { IObject } from '../../object-list.types.js';
 import { ActivatedRoute } from '@angular/router';
-import { myObjects } from '../../object-list.constants';
+import { myObjects } from '../../object-list.constants.js';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 
