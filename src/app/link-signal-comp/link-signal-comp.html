@@ -1,1 +1,6 @@
 <p>link-signal-comp works!</p>
+
+<div>Адрес: {{ shippingAddresses() }}</div>
+<div>Выбор: {{ selectedOption() }}</div>
+<button (click)="changeShippingAddresses()">Изменить</button>
+<button (click)="changeShippingAddress(2)">Изменить</button>
