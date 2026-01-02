@@ -16,4 +16,5 @@ export const NAVIGATION_ROUTES = [
   { path: '/something', label: 'Что-то ещё' },
   { path: '/animation', label: 'Анимация' },
   { path: '/link-signal-comp', label: 'linkSignal' },
+  { path: '/some-signal', label: 'someSignal' },
 ];

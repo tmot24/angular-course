@@ -10,7 +10,7 @@ import { UserService } from '../../../user/user.service.js';
 })
 export class RenderItem {
   protected userService = inject(UserService);
-  public todoItem = input.required<IRerenderItem>();
+  public readonly todoItem = input.required<IRerenderItem>();
   public changeItem = output<IRerenderItem>();
 
   protected returnBool() {

@@ -1,0 +1,3 @@
+<div>input</div>
+<div>Текст в родителе: {{ text() }}</div>
+<app-child-signal [parentValue]="1" (changeParentText)="changeText($event)" [(value)]="parentValue"/>
