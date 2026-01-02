@@ -12,6 +12,7 @@ import { userRoutes } from './user/user.routes.js';
 import { isLoggedGuard } from './guard/is-logged-guard.js';
 import { rerenderRoutes } from './rerender/rerender.routes.js';
 import { animationRoutes } from './animation/animation.routes.js';
+import { linkSignalCompRoutes } from './link-signal-comp/link-signal-comp.routes.js';
 
 export const routes: Routes = [
   {
@@ -76,6 +77,11 @@ export const routes: Routes = [
     title: 'Анимация',
     path: 'animation',
     children: animationRoutes,
+  },
+  {
+    title: 'linkSignal',
+    path: 'link-signal-comp',
+    children: linkSignalCompRoutes,
   },
   {
     title: '404',

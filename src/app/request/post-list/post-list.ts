@@ -1,25 +1,19 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Post, PostService } from '../service/post.service.js';
-import { Observable } from 'rxjs';
+import { PostService } from '../service/post.service.js';
 import { RouterLink } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-post-list',
   imports: [
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './post-list.html',
 })
 export class PostList implements OnInit {
   private postService = inject(PostService);
-
-  protected posts$?: Observable<Post[]>;
-
-  protected postsSignal = toSignal(this.postService.getPosts(), { initialValue: [] });
+  protected postsSignal = this.postService.posts;
 
   ngOnInit() {
-    this.posts$ = this.postService.getPosts();
+    this.postService.refresh(); // При заходе на страницу
   }
-
 }

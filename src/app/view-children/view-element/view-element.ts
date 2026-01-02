@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, viewChild, viewChildren } from '@angular/core';
-import { Calculator } from '../../components/calculator/calculator';
+import { Calculator } from '../../components/calculator/calculator.js';
 
 @Component({
   selector: 'app-view-element',

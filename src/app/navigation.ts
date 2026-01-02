@@ -15,4 +15,5 @@ export const NAVIGATION_ROUTES = [
   { path: '/rerender', label: 'Rerender' },
   { path: '/something', label: 'Что-то ещё' },
   { path: '/animation', label: 'Анимация' },
+  { path: '/link-signal-comp', label: 'linkSignal' },
 ];
