@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ChildSignal } from './child-signal/child-signal.js';
+import { ViewSignal } from './view-signal/view-signal.js';
 
 @Component({
   selector: 'app-some-signal',
   imports: [
     ChildSignal,
+    ViewSignal,
   ],
   templateUrl: './some-signal.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

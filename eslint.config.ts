@@ -37,7 +37,6 @@ export default  defineConfig([
           message: 'Do not use arrow functions as class methods in Angular components',
         },
       ],
-      '@typescript-eslint/explicit-member-accessibility': 'error'
     },
   },
   {
