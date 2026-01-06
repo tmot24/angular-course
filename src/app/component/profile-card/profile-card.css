@@ -2,7 +2,7 @@
   border: 1px solid var(--light-color);
   padding: 32px 24px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr) auto;
   grid-gap: 32px;
 }
 
@@ -28,7 +28,9 @@
 .profile-card__tags {
   display: flex;
   gap: 4px;
-  align-items: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  height: min-content;
 }
 
 .skill-tag {
@@ -38,4 +40,5 @@
   display: inline;
   font-size: 12px;
   font-weight: 700;
+  height: 24px;
 }

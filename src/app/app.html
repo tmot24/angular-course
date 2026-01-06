@@ -1,2 +1,6 @@
-<div>Hello</div>
-<app-profile-card />
+<div class="profile-card__wrapper">
+  @for (profile of profileData.value(); track profile.id) {
+    <app-profile-card [profile]="profile"/>
+  }
+</div>
+

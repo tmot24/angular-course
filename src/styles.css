@@ -12,6 +12,14 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 button,
 input,
 select,
