@@ -1,17 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { Navigation } from './navigation/navigation.js';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { ProfileCard } from './component/profile-card/profile-card.js';
 
 @Component({
   selector: 'app-root',
-  imports: [ Navigation, RouterOutlet ],
+  imports: [
+    ProfileCard,
+  ],
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('Заголовок');
-  protected readonly tooltip = signal('Новая подсказка');
-
-  showMessage() {
-    alert(this.title());
-  }
 }
