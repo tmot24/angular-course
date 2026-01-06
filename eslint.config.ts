@@ -13,7 +13,15 @@ export default  defineConfig([
       angular.configs.tsRecommended,
     ],
     processor: angular.processInlineTemplates,
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
+    },
     rules: {
+      '@angular-eslint/no-experimental': 'warn',
+      '@angular-eslint/no-developer-preview': 'warn',
       "@angular-eslint/directive-selector": [
         "error",
         {
@@ -37,6 +45,7 @@ export default  defineConfig([
           message: 'Do not use arrow functions as class methods in Angular components',
         },
       ],
+
     },
   },
   {
