@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { httpResource } from '@angular/common/http';
-import { Profile } from './interface.js';
+import { Pageable, Profile } from './interface.js';
 
 @Injectable({
   providedIn: 'root',
@@ -12,4 +12,12 @@ export class ProfileService {
   });
 
   user = httpResource<Profile>(() => 'account/me');
+
+  subscribersShortList = httpResource<Pageable<Profile>>(() => ({
+    url: 'account/subscribers/',
+    params: {
+      page: 1,
+      size: 3
+    }
+  }));
 }

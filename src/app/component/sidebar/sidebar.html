@@ -1,1 +1,26 @@
-<p>sidebar works!</p>
+<img class="ml16 mb20" ngSrc="images/logo-small.svg" alt="logo-small" height="74" width="61" priority/>
+
+<nav class="mb20">
+  <ul class="main-menu-list">
+    @for (li of menuItems(); track li.link) {
+      <li>
+        <button class="menu-item">
+          <app-svg-icon [icon]="li.icon"/>
+          <span>{{ li.label }}</span>
+        </button>
+      </li>
+    }
+  </ul>
+</nav>
+
+<p class="medium-text mb20">Подписчики</p>
+
+@for (subscriber of subscribers()?.items; track subscriber.id) {
+  <app-subscriber-preview [profile]="subscriber" />
+}
+
+
+<div class="mt20 to-subscribers">
+  <a class="to-subscribers-link medium-text" [routerLink]="['/subscribers']">Все подписчики</a>
+  <app-svg-icon icon="arrow" class="to-subscribers-icon" />
+</div>

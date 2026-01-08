@@ -10,3 +10,11 @@ export interface Profile {
   city: string | null,
   description: string | null
 }
+
+export interface Pageable<T> {
+  items: T[],
+  total: number,
+  page: number,
+  size: number,
+  pages: number
+}

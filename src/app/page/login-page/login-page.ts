@@ -3,12 +3,14 @@ import { NgOptimizedImage } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service.js';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SvgIcon } from '../../component/svg-icon/svg-icon.js';
 
 @Component({
   selector: 'app-login',
   imports: [
     NgOptimizedImage,
     ReactiveFormsModule,
+    SvgIcon,
   ],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
