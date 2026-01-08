@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service.js';
@@ -18,6 +18,8 @@ export class LoginPage {
   private authService = inject(AuthService);
   private router = inject(Router);
   private route = inject(ActivatedRoute);
+
+  protected isPasswordVisible = signal(false);
 
   form = new FormGroup({
     username: new FormControl<string | null>('ya_grisha', Validators.required),
@@ -39,5 +41,9 @@ export class LoginPage {
         },
       });
     }
+  }
+
+  protected togglePasswordVisibility() {
+    this.isPasswordVisible.update(value => !value);
   }
 }
