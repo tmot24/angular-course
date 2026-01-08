@@ -1,7 +1,7 @@
 import { HttpInterceptorFn } from '@angular/common/http';
-import { environment } from '../../environments/environment.js';
+import { environment } from '../environment.js';
 
-export const urlInterceptor: HttpInterceptorFn = (req, next) => {
+export const apiInterceptor: HttpInterceptorFn = (req, next) => {
   const apiReq = req.clone({
     url: `${environment.apiUrl}/${req.url}`
   });

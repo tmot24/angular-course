@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { environment } from '../../environments/environment.js';
+import { environment } from '../environment.js';
 
 @Pipe({
   name: 'avatarUrl',
