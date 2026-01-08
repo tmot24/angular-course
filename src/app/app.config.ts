@@ -3,12 +3,13 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { routes } from './app.routes.js';
 import { apiInterceptor } from './interceptor/api-interceptor.js';
+import { tokenInterceptor } from './interceptor/token-interceptor.js';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([apiInterceptor])),
+    provideHttpClient(withInterceptors([apiInterceptor, tokenInterceptor])),
   ]
 };

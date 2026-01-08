@@ -6,7 +6,10 @@ import { Profile } from './interface.js';
   providedIn: 'root',
 })
 export class ProfileService {
-  profileData = httpResource<Profile[]>(() => 'account/test_accounts', {
+  // httpResource для get (отменяет предыдущий запрос)
+  profiles = httpResource<Profile[]>(() => 'account/test_accounts', {
     defaultValue: [],
   });
+
+  user = httpResource<Profile>(() => 'account/me');
 }
