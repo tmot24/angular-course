@@ -33,12 +33,3 @@
   height: min-content;
 }
 
-.skill-tag {
-  padding: 4px 8px;
-  border-radius: 2px;
-  border: 1px solid var(--light-color);
-  display: inline;
-  font-size: 12px;
-  font-weight: 700;
-  height: 24px;
-}

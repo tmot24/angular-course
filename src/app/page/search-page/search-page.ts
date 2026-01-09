@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ProfileCard } from '../../component/profile-card/profile-card.js';
+import { ProfileCard } from '../../component/profile/profile-card/profile-card.js';
 import { ProfileService } from '../../data/profile/profile.service.js';
 
 @Component({

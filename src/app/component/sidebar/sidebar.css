@@ -1,6 +1,8 @@
 :host {
   display: block;
   padding: 20px 12px;
+  position: relative;
+  background-color: var(--dark-color);
 }
 
 .main-menu-list {
@@ -44,5 +46,22 @@
 
 .to-subscribers-icon {
   color: var(--primary-clor);
+}
 
+.sidebar__footer {
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 24px);
+  background-color: var(--dark-hover-color);
+  color: var(--primary-clor);
+  border-radius: 4px;
+  padding: 4px 16px;
+  display: grid;
+  grid-template-columns: 32px 1fr 16px;
+  grid-gap: 12px;
+  align-items: center;
+}
+
+.username-text {
+  font-weight: 700;
 }

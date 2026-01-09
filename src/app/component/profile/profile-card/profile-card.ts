@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { Profile } from '../../data/profile/interface.js';
+import { Profile } from '../../../data/profile/interface.js';
 import { NgOptimizedImage } from '@angular/common';
-import { AvatarUrlPipe } from '../../pipe/avatar-url-pipe.js';
+import { AvatarUrlPipe } from '../../../pipe/avatar-url-pipe.js';
 
 @Component({
   selector: 'app-profile-card',

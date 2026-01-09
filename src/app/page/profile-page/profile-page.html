@@ -1,1 +1,38 @@
-<p>profile-page works!</p>
+<header class="profile-page__header">
+  <app-profile-header [profile]="profile()"/>
+
+  <a class="btn to-setting-btn" [routerLink]="['/settings']">Редактировать
+    <app-svg-icon icon="settings" [width]="14" [height]="14"/>
+  </a>
+</header>
+
+<main class="profile-page__body">
+  <div>
+    <app-post-feed />
+  </div>
+
+  <div>
+    <h6 class="mb16">Подписчики</h6>
+    <div class="subscribers-wrapper mb32">
+      @for (subscriber of subscribers()?.items; track subscriber.id) {
+        <a routerLink="/profile" [queryParams]="{ id: subscriber.id }" class="subscribers-wrapper__link">
+          <img [ngSrc]="subscriber.avatarUrl | avatarUrl" alt="avatar" class="subscriber-avatar-img" [width]="36"
+               [height]="36"/>
+        </a>
+      }
+      <a routerLink="/search" class="subscribers-wrapper__link">
+        <app-svg-icon icon="plus" [width]="14" [height]="14" class="subscribers-wrapper__plus"/>
+      </a>
+    </div>
+
+    <h6 class="mb16">Навыки</h6>
+    <div class="stack-wrapper mb32">
+      @for (skill of profile()?.stack; track skill) {
+        <div class="skill-tag">{{ skill }}</div>
+      }
+    </div>
+
+    <h6 class="mb16">О себе</h6>
+    <p class="medium-text">{{ profile()?.description }}</p>
+  </div>
+</main>

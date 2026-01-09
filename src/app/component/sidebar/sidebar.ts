@@ -4,6 +4,7 @@ import { SvgIcon } from '../svg-icon/svg-icon.js';
 import { SubscriberPreview } from '../subscriber-preview/subscriber-preview.js';
 import { RouterLink } from '@angular/router';
 import { ProfileService } from '../../data/profile/profile.service.js';
+import { AvatarUrlPipe } from '../../pipe/avatar-url-pipe.js';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,6 +13,7 @@ import { ProfileService } from '../../data/profile/profile.service.js';
     SvgIcon,
     SubscriberPreview,
     RouterLink,
+    AvatarUrlPipe,
   ],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
@@ -20,23 +22,23 @@ import { ProfileService } from '../../data/profile/profile.service.js';
 export class Sidebar {
   private profileService = inject(ProfileService);
   subscribers = this.profileService.subscribersShortList.value;
-  user = this.profileService.user.value;
+  user = this.profileService.currentUser.value;
 
   menuItems = signal([
     {
       label: 'Моя страница',
       icon: 'home',
-      link: '',
+      link: '/profile',
     },
     {
       label: 'Чаты',
       icon: 'chat',
-      link: 'chats',
+      link: '/chats',
     },
     {
       label: 'Поиск',
       icon: 'search',
-      link: 'search',
+      link: '/search',
     },
   ]);
 }
