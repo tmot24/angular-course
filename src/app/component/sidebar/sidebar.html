@@ -4,10 +4,10 @@
   <ul class="main-menu-list">
     @for (li of menuItems(); track li.link) {
       <li>
-        <button class="menu-item" [routerLink]="li.link">
+        <a class="menu-item" [routerLink]="li.link">
           <app-svg-icon [icon]="li.icon"/>
           <span>{{ li.label }}</span>
-        </button>
+        </a>
       </li>
     }
   </ul>
@@ -16,7 +16,7 @@
 <p class="medium-text mb20">Подписчики</p>
 
 @for (subscriber of subscribers()?.items; track subscriber.id) {
-  <app-subscriber-preview [profile]="subscriber"/>
+  <app-subscriber-preview [profile]="subscriber" routerLink="/profile" [queryParams]="{ id: subscriber.id }" />
 }
 
 

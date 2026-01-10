@@ -1,14 +1,16 @@
 <header class="profile-page__header">
   <app-profile-header [profile]="profile()"/>
 
-  <a class="btn to-setting-btn" [routerLink]="['/settings']">Редактировать
-    <app-svg-icon icon="settings" [width]="14" [height]="14"/>
-  </a>
+  @if (!userId()) {
+    <a class="btn to-setting-btn" [routerLink]="['/settings']">Редактировать
+      <app-svg-icon icon="settings" [width]="14" [height]="14"/>
+    </a>
+  }
 </header>
 
 <main class="profile-page__body">
   <div>
-    <app-post-feed />
+    <app-post-feed/>
   </div>
 
   <div>
@@ -26,12 +28,13 @@
     </div>
 
     <h6 class="mb16">Навыки</h6>
-    <div class="stack-wrapper mb32">
-      @for (skill of profile()?.stack; track skill) {
-        <div class="skill-tag">{{ skill }}</div>
-      }
-    </div>
-
+    @if (profile()?.stack?.length && profile()?.stack?.[0] !== '') {
+      <div class="stack-wrapper mb32">
+        @for (skill of profile()?.stack; track skill) {
+          <div class="skill-tag">{{ skill }}</div>
+        }
+      </div>
+    }
     <h6 class="mb16">О себе</h6>
     <p class="medium-text">{{ profile()?.description }}</p>
   </div>

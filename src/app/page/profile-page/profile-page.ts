@@ -26,7 +26,7 @@ import { PostFeed } from '../../component/profile/post-feed/post-feed.js';
 export class ProfilePage {
   private route = inject(ActivatedRoute);
   private profileService = inject(ProfileService);
-  private userId = toSignal(this.route.queryParamMap.pipe(
+  userId = toSignal(this.route.queryParamMap.pipe(
     map((params) => params.get('id') ?? undefined),
   ), { initialValue: undefined });
   private currentUser = this.profileService.currentUser.value;

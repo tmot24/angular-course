@@ -1,3 +1,17 @@
 export const NAVIGATION_ROUTES = [
   { path: '/calculator', label: 'Калькулятор' },
+  { path: '/object-list', label: 'Лист объектов' },
+  { path: '/directive', label: 'Директива' },
+  { path: '/life-cycle', label: 'Жизненные циклы' },
+  { path: '/request', label: 'Запросы' },
+  { path: '/pipes', label: 'Пайпы' },
+  { path: '/forms', label: 'Формы' },
+  { path: '/forms/builder-form', label: 'builder-form' },
+  { path: '/forms/driven', label: 'driven' },
+  { path: '/forms/custom-form', label: 'custom-form' },
+  { path: '/view-element', label: 'view-element' },
+  { path: '/view-element/container', label: 'container' },
+  { path: '/user', label: 'Пользователь' },
+  { path: '/rerender', label: 'Rerender' },
+  { path: '/something', label: 'Что-то ещё' },
 ];

@@ -36,4 +36,14 @@ export class ProfileService {
       return this.http.get<Pageable<Profile>>('account/subscribers/', { params });
     },
   });
+
+  patchProfile(profile: Partial<Profile>) {
+    return this.http.patch<Profile>('account/me', profile);
+  }
+
+  uploadAvatar(file: File) {
+    const formData = new FormData();
+    formData.append('image', file);
+    return this.http.post('account/upload_image', formData);
+  }
 }

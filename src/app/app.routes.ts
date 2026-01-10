@@ -4,6 +4,7 @@ import { SearchPage } from './page/search-page/search-page.js';
 import { ProfilePage } from './page/profile-page/profile-page.js';
 import { Layout } from './component/layout/layout.js';
 import { accessGuard } from './guard/access-guard.js';
+import { SettingsPage } from './page/settings-page/settings-page.js';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,11 @@ export const routes: Routes = [
         title: 'Профиль',
         path: 'profile',
         component: ProfilePage,
+      },
+      {
+        title: 'Настройки',
+        path: 'settings',
+        component: SettingsPage,
       },
     ],
   },
