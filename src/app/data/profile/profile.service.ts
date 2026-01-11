@@ -1,9 +1,9 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient, httpResource } from '@angular/common/http';
 import { Pageable, Profile } from './interface.js';
 import { rxResource, toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
-import { EMPTY, map } from 'rxjs';
+import { EMPTY, map, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +14,8 @@ export class ProfileService {
   private userId = toSignal(this.route.queryParamMap.pipe(
     map((params) => params.get('id') ?? undefined),
   ), { initialValue: undefined });
+
+  filteredProfiles = signal<Profile[]>([]);
 
   currentUser = httpResource<Profile>(() => 'account/me');
   userById = rxResource({
@@ -45,5 +47,18 @@ export class ProfileService {
     const formData = new FormData();
     formData.append('image', file);
     return this.http.post('account/upload_image', formData);
+  }
+
+  filterProfiles(params: Record<string, string | null | undefined>) {
+    const cleanParams = Object.entries(params)
+      .filter(([ _, value ]) => value != null && value !== '')
+      .reduce((acc, [ key, value ]) => {
+        acc[key] = value as string;
+        return acc;
+      }, {} as Record<string, string>);
+
+    return this.http.get<Pageable<Profile>>('account/accounts', { params: cleanParams }).pipe(
+      tap((res) => this.filteredProfiles.set(res.items)),
+    );
   }
 }

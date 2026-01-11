@@ -16,8 +16,13 @@ export const routes: Routes = [
     title: 'TIK-TALK',
     path: '',
     component: Layout,
-    canActivate: [accessGuard],
+    canActivate: [ accessGuard ],
     children: [
+      {
+        path: '',
+        redirectTo: '/profile',
+        pathMatch: 'full'
+      },
       {
         title: 'Поиск',
         path: 'search',
